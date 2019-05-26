@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Hamley Products</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/css/mdb.min.css" rel="stylesheet">
+
+
+    <style>
+        /* TEMPLATE STYLES */
+        figure {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            /* background-color: #fff; */
+            color: #555;
+            font-family: 'Lato', 'Arial', sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+            background-color: #33b5e5;
+            margin: 0 auto;
+        }
+
+
+        .carosoulsize {
+            min-height: 250px;
+            max-height: 250px;
+        }
+
+        .d-md-inline-block {
+            border-radius: 5px;
+            height: 30vh;
+            /* position: relative; */
+        }
+
+        .d-md-inline-block:hover {
+            transform: scale(1.03);
+        }
+
+        .writeover {
+            position: absolute;
+            margin: 50% auto;
+            color: rgb(235, 29, 29);
+        }
+
+        .softtoy {
+            background-image: url("https://cdn.pixabay.com/photo/2016/08/23/13/12/knitting-1614283_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+            margin-right: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .art {
+            background-image: url("https://cdn.pixabay.com/photo/2016/02/19/10/59/art-1209519_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .craft {
+            background-image: url("https://cdn.pixabay.com/photo/2015/09/16/05/57/embroidery-942255_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+            margin-right: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .actionfigures {
+            background-image: url("https://cdn.pixabay.com/photo/2016/10/09/00/18/star-wars-1724901_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.678), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .cars {
+            background-image: url("https://cdn.pixabay.com/photo/2016/04/05/00/21/vw-1308501_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+            margin-right: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .trains {
+            background-image: url("https://cdn.pixabay.com/photo/2016/01/18/16/21/model-train-1146828_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.678), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .mask1 {
+            -webkit-mask-image: linear-gradient(to bottom, transparent 25%, black 75%);
+            mask-image: linear-gradient(to bottom, transparent 25%, black 75%);
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        }
+
+        main {
+            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.267);
+            /* background-color: #33b5e5; */
+            margin-top: 10%;
+            margin-bottom: 10%;
+            margin-right:5%;
+            margin-left: 5%;
+        }
+
+        /* Card flip css */
+
+        .maincontainer {
+            position: relative;
+            background: none;
+            top: 50%;
+            left: 50%;
+            height: 80%;
+            width: auto;
+            transform: translate(-50%, -50%);
+
+        }
+
+        /* THE CARD HOLDS THE FRONT AND BACK FACES */
+        .thecard {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transform-style: preserve-3d;
+            transition: all 0.8s ease;
+        }
+
+        /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+        .thecard:hover {
+            transform: rotateY(180deg);
+        }
+
+        /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+        .thefront {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            background: #ffc728;
+            color: #000;
+        }
+
+        /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+        .theback {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            background: #fafafa;
+            color: #333;
+            text-align: center;
+            transform: rotateY(180deg);
+            margin-top: -26%;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            padding: 1px;
+            /* border-bottom: 1px solid #0099CC; */
+            transition: border-bottom 0.2s, color 0.2s;
+            /* margin-top: -30%; */
+        }
+
+        .btn {
+            /* padding-top: -30px; */
+            font-size: 14px;
+            max-height: 50px;
+            max-width: 100px;
+            ;
+            margin-top: -50px;
+            padding-right: -10px;
+            text-decoration: none;
+            border-radius: 20px;
+            background-color: #33b5e5;
+            transition: background-color 0.2s, border 0.2s, color 0.2s;
+        }
+
+        h6 {
+            background-color: rgba(0, 0, 0, 0.568);
+            border-radius: 5px 5px 0px 0px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <main>
+        <div class="row ">
+
+            <figure class="col-5 col-md-5 d-md-inline-block ml-4 ">
+                <div class="maincontainer">
+
+                    <div class="thecard softtoy">
+                        <h6 style="color:cornsilk">Soft Toys</h6>
+                        <div class="theback ">
+                            <a class="" href="#" style="margin-top: 45%;">
+                                <p>Buy Soft Toys</p>
+                                <p><i class="fab fa-sticker-mule"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <figure class="col-5 col-md-5 d-md-inline-block ">
+
+                <div class="maincontainer">
+
+                    <div class="thecard art">
+                        <h6 style="color:cornsilk">Art</h6>
+                        <div class="theback ">
+                            <a href="#" class="" style="margin-top: 45%;">
+                                <p>Buy art products</p>
+                                <p><i class="fas fa-pencil-ruler"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <br>
+            <figure class="col-5 col-md-5 d-md-inline-block ml-4 ">
+                <div class="maincontainer">
+
+                    <div class="thecard craft">
+                        <h6 style="color:cornsilk">Craft</h6>
+                        <div class="theback">
+                            <a href="#" class="" style="margin-top: 45%;">
+                                <p>Buy Craft Products</p>
+                                <p><i class="fas fa-drafting-compass"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <figure class="col-5 col-md-5 d-md-inline-block ">
+
+                <div class="maincontainer">
+
+                    <div class="thecard actionfigures">
+                        <h6 style="color:cornsilk; font-size:15px;">Action Figures</h6>
+                        <div class="theback ">
+                            <a href="#" class="" style="margin-top:-10%;">
+                                <p>Buy Action Figures</p>
+                                <p><i class="fas fa-skating"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure class="col-5 col-md-5 d-md-inline-block ml-4 ">
+                <div class="maincontainer">
+
+                    <div class="thecard trains">
+                        <h6 style="color:cornsilk">Trains</h6>
+                        <div class="theback ">
+                            <a href="#" class="" style="margin-top: 45%;">
+                                <p>Buy toy trains</p>
+                                <p><i class="fas fa-train"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <figure class="col-5 col-md-5 d-md-inline-block ">
+
+                <div class="maincontainer">
+
+                    <div class="thecard cars">
+                        <h6 style="color:cornsilk">Cars</h6>
+                        <div class="theback ">
+                            <a href="#" class="" style="margin-top: 50px;">
+                               <p>Buy toy cars</p>
+                               <p><i class="fas fa-car"></i></p> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </main>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>
+</body>
+
+</html>
